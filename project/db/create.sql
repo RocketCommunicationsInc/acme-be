@@ -1,0 +1,2 @@
+CREATE DATABASE acme_dev;
+CREATE DATABASE acme_test;
