@@ -19,6 +19,10 @@ To initialize the database, run `docker-compose exec acme aerich init -t app.db.
 Create the first migration: `docker-compose exec acme aerich init-db`
 To ensure it was succesful, you can query the postgres database by using `docker-compose exec acme-db psql -U postgres`, `\c acme_dev`, `\dt`. It should list the created relations.
 
+#### Troubleshooting
+
+If the postgres setup commands have been run but you don't see the relations or you get a "model not found" error, try running: `docker-compose exec acme aerich upgrade`. This will create any tables defined within the `upgrade` method.
+
 ### Testing
 
 This project should try to use test driven developement whenever possible. This means writing tests, ensuring failures, and then writing the code to make that test pass.
